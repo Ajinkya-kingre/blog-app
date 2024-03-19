@@ -14,7 +14,6 @@ export default function AddNewBlog() {
     });
 
     const result = await response.data;
-    
     console.log(result);
   }
   return (

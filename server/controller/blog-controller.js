@@ -45,7 +45,7 @@ const addNewBlog = async (req, res) => {
     return res.send(500).json({ message: error });
   }
 
-  return res.send(200).json({ newlyCreateBlog });
+  return res.status(200).json({ newlyCreateBlog });
 };
 
 // Delelting a Blog
