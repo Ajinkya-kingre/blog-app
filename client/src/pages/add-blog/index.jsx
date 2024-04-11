@@ -2,10 +2,12 @@ import { useContext } from "react";
 import classes from "./styles.module.css";
 import { GlobalContext } from "../../context";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AddNewBlog() {
   const { formData, setFormData } = useContext(GlobalContext);
-  console.log(formData);
+
+  const navigate = useNavigate();
 
   async function handleSaveDataToDatabase() {
     const response = await axios.post("http://localhost:5000/api/blogs/add", {
@@ -14,7 +16,14 @@ export default function AddNewBlog() {
     });
 
     const result = await response.data;
-    console.log(result);
+
+    if (result) {
+      setFormData({
+        title: "",
+        description: "",
+      });
+      navigate("/");
+    }
   }
   return (
     <div className={classes.wrapper}>
