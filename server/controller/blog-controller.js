@@ -58,7 +58,7 @@ const deleteABlog = async (req, res) => {
       return res.status(404).json({ message: "NO Blog Found!" });
     }
 
-    return res.send(200).json({ message: "Succesfully Deleted!!" });
+    return res.status(200).json({ message: "Succesfully Deleted!!" });
   } catch (error) {
     console.log(error);
     return res
@@ -82,7 +82,7 @@ const updageABlog = async (req, res) => {
     console.log(error);
 
     return (
-      res.send(500),
+      res.status(500),
       json({
         message: "Something went Wrong while Updating! Please try agin!!",
       })
@@ -93,7 +93,7 @@ const updageABlog = async (req, res) => {
     return res.status(500).json({ message: "unable to Update" });
   }
 
-  return res.send(200).json({ currBlogToUpdate });
+  return res.status(200).json({ currBlogToUpdate });
 };
 
 module.exports = { fetchListOfBlogs, addNewBlog, deleteABlog, updageABlog };
