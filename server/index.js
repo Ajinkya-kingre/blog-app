@@ -7,7 +7,7 @@ require("./db");
 const app = express();
 app.use(
   cors({
-    origin: ["https://mern-f-blog-app.vercel.app/"],
+    origin: ["https://mern-f-blog-app.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
