@@ -13,7 +13,7 @@ export default function Home() {
 
   async function fetchListOfBlogs() {
     setPending(true);
-    const response = await axios.get("http://localhost:5000/api/blogs");
+    const response = await axios.get("https://mern-blog-app-gamma.vercel.app/api/blogs");
     const result = await response.data;
 
     console.log(result);
