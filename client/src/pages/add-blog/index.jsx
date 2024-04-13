@@ -13,11 +13,11 @@ export default function AddNewBlog() {
 
   async function handleSaveDataToDatabase() {
     const response = isEdit
-      ? await axios.put(`http://localhost:5000/api/blogs/update/${location.state.getCurrBlogItem._id}`, {
+      ? await axios.put(`https://mern-blog-app-gamma.vercel.app/api/blogs/update/${location.state.getCurrBlogItem._id}`, {
           title: formData.title,
           description: formData.description,
         })
-      : await axios.post("http://localhost:5000/api/blogs/add", {
+      : await axios.post("https://mern-blog-app-gamma.vercel.app/api/blogs/add", {
           title: formData.title,
           description: formData.description,
         });
